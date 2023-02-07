@@ -40,7 +40,17 @@
 
     ];
 
+
+    // foreach($hotels as $key => $index){
+    //     echo "<h3>$key</h3>";
+    //     foreach($index as $hotel){
+    //         echo"$hotel <br>";
+    //     }
+    // }
+
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -54,10 +64,19 @@
 </head>
 <body>
     <div class="container mt-3">
+    <h1 class="text-center">HOTELS</h1>
     <div class="hotels-name">
+        
         <h3>Hotel Name</h3>
+        <?php foreach($hotels as $key => $index):?>
+            <ul>
+                <?php foreach($index as $hotel_name): ?>
+                    <li><?= $hotel_name?></li>
+                <?php endforeach ?>
+            </ul>
+        <?php endforeach?>
         <ul>
-
+            
         </ul>
     </div>
 </div>
