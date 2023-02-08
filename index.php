@@ -65,17 +65,30 @@
 <body>
     <div class="container mt-3">
     <h1 class="text-center">HOTELS</h1>
-    <div class="hotels-name">
         
-        <h3>Hotel Name</h3>
-        <?php foreach($hotels as $key => $index):?>
-            <ul>
-                <?php foreach($index as $hotel_name): ?>
-                    <li><?= $hotel_name?></li>
-                <?php endforeach ?>
-            </ul>
-        <?php endforeach?>
-        <ul>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parcheggio</th>
+      <th scope="col">Voto</th>
+      <th scope="col">Distanza dal centro</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($hotels as $hotel) :?>
+    <tr>
+      <th scope="row"><?=$hotel['name']?></th>
+      <td><?=$hotel['description']?></td>
+      <td><?=$hotel['parking'] ?'Si':'No' ?></td>
+      <td><?=$hotel['vote']?></td>
+      <td><?=$hotel['distance_to_center']?></td>
+    </tr>
+  </tbody>
+  <?php endforeach ?>
+</table>
             
         </ul>
     </div>
